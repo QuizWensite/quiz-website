@@ -5,10 +5,144 @@
   /* font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif; */
 }
+body {
+  background-color: #fef4e8;
+}
+/* nav */
 .navbar {
   padding: 0;
 }
-
+.btn {
+  background-color: #b00005;
+  color: white;
+}
 .container-fluid {
+  margin-left: 5%;
   padding: 0;
+  background-color: #fef4e8;
+  width: 90%;
+}
+/* login button */
+.btn {
+  margin-right: 3%;
+}
+.logoImage {
+  width: 23%;
+}
+/* body */
+.pageContainer {
+  margin-left: 5%;
+  width: 90%;
+}
+
+.seprator {
+  background-color: #b00005;
+  height: 0.5vh;
+}
+/* about section */
+.aboutTitle {
+  margin: 4% 0 2% 0;
+}
+.descriptionAbout {
+  width: 100%;
+  height: 30vh;
+  background-color: #b00005;
+  color: white;
+  height: 45vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 44vh;
+  border-bottom-left-radius: 44vh;
+}
+.descriptionText {
+  margin-left: 5%;
+  width: 80%;
+}
+/* Youtube Container*/
+.youtubeContainer {
+  margin-top: 15%;
+  background-color: red;
+  width: 100%;
+  height: 90vh;
+  background-color: red;
+}
+.youtubeVideo {
+  background-color: black;
+  width: 100%;
+  height: 70vh;
+}
+/* quiz Container */
+.quizCardContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5%;
+  margin-top: 15%;
+}
+.quizCard {
+  background-color: #f6e8d6;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #b00005;
+  border-radius: 2vh;
+  gap: 10px;
+}
+.numberOfQuestions {
+  text-align: start;
+}
+.quizImage {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+.descOfQuiz,
+.numberOfQuestions,
+.quizDuration {
+  margin-left: 5%;
+  width: 90%;
+}
+.startQuiz {
+  width: 40%;
+  height: 7vh;
+  color: white;
+  background-color: #b00005;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+  border-radius: 1vh;
+}
+/* footer */
+.sepratorFooter {
+  background-color: #b00005;
+  height: 0.5vh;
+  margin-top: 5%;
+}
+/* footer */
+.footerContainer {
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: 20vh;
+}
+.footerLogo {
+  height: 50%;
+}
+.footerLogoEmail {
+  height: 50%;
+}
+
+.footerLogoLinkedIn {
+  height: 50%;
+}
+
+.footerLogoGithub {
+  height: 50%;
+}
+.rightImageContainer {
+  display: flex;
+  justify-content: end;
+  margin-left: auto;
+  width: 100%;
 }
