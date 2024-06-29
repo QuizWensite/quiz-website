@@ -41,3 +41,23 @@ function createYoutubeVideo(data) {
     console.log("entered created")// debug
 }
 // ${data.items.snippet.thumbnails.default.url}
+
+
+
+
+
+// cards animation
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+                observer.unobserve(entry.target); // To ensure the animation runs only once
+            }
+        });
+    });
+
+    document.querySelectorAll('#entryAnimation').forEach(element => {
+        observer.observe(element);
+    });
+});
