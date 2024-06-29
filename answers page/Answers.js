@@ -6,9 +6,9 @@ let Question4 = document.getElementById("question4");
 let Question5 = document.getElementById("question5");
 
 function handleLogoutClick0() {
-    window.location.href = "quiz.html";
+    window.location.href = "../quiz/quiz.html";
 }
 
 function handleLogoutClick() {
-    window.location.href = "homePage.html";
+    window.location.href = "../home page/homePage.html";
 }
