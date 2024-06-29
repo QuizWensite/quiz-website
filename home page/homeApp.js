@@ -5,7 +5,7 @@ let search = `html css js quiz`
 console.log(youtubeContainer)
 fetchYoutubeVideo(search);
 function fetchYoutubeVideo(search) {
-    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${search}&key=AIzaSyCf-zK2wWIBHVlSvXZRfpYHYjzcW7Mqn0U`)
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${search}&key=AIzaSyBx66h7lf4-GtFHkQTFIUuKbiwF6ucbMnM`)
         .then(response => {
             console.log("entered res")// debug
             if (!response.ok)
