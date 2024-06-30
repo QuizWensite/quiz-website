@@ -2,10 +2,14 @@
 // https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=quiz&key=AIzaSyCf-zK2wWIBHVlSvXZRfpYHYjzcW7Mqn0U
 let youtubeContainer = document.querySelector(".youtubeContainer");
 let search = `html css js quiz`
+let htmlButton = document.querySelector(".HTML")
+let cssButton = document.querySelector(".CSS")
+let jsButton = document.querySelector(".JS")
+
 console.log(youtubeContainer)
 fetchYoutubeVideo(search);
 function fetchYoutubeVideo(search) {
-    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${search}&key=AIzaSyCf-zK2wWIBHVlSvXZRfpYHYjzcW7Mqn0U`)
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${search}&key=AIzaSyBx66h7lf4-GtFHkQTFIUuKbiwF6ucbMnM`)
         .then(response => {
             console.log("entered res")// debug
             if (!response.ok)
@@ -41,3 +45,30 @@ function createYoutubeVideo(data) {
     console.log("entered created")// debug
 }
 // ${data.items.snippet.thumbnails.default.url}
+
+htmlButton.addEventListener("click", () => {
+    localStorage.setItem("url", "htmlQus.json")
+})
+cssButton.addEventListener("click", () => {
+    localStorage.setItem("url", "cssQus.json")
+})
+jsButton.addEventListener("click", () => {
+    localStorage.setItem("url", "jsQus.json")
+})
+
+
+// cards animation
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+                observer.unobserve(entry.target); // To ensure the animation runs only once
+            }
+        });
+    });
+
+    document.querySelectorAll('#entryAnimation').forEach(element => {
+        observer.observe(element);
+    });
+});
