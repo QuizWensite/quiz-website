@@ -11,7 +11,19 @@
   />
   <link rel="stylesheet" href="Answers.css" />
 </head>
-<body>
+<body onload="table()">
+  <div class="parent" id="parent">
+<div id="Container2" class="Container2">
+ <img src="Heart.png" id="image">
+ <div>You scored :<span id="resultNumber" > </span> out of 5</div>
+ <div id="comment">Try again</div>
+ <br>
+ <button class="btn bg-white text-dark " type="submit" onclick="handleLogoutClick2()">Show Answers</button>
+ <button class="btn bg-white text-dark " type="submit" onclick="handleLogoutClick()">Back to Home</button>
+
+</div>
+</div>
+  <div class="container" id="container">
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -43,22 +55,24 @@
     </nav>
     <div class="seprator"></div>
 
+<div class="pageContainer"> 
 
-      <div id="score" >score : <span id="number"></span>/10</div>
+  <table class="tableAnswers">
+    <thead>
+        <tr>
+            <th>Number of Questions</th>
+            <th>Question</th>
+            <th>Correct Answer</th>
+            <th>Answer</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody" >
 
-      <div class="Container">
-        <div class="question" id="question1">Question1</div>
-        <div class="question" id="question2">Question2</div>
-        <div class="question" id="question3">Question3</div>
-        <div class="question" id="question4">Question4</div>
-        <div class="question" id="question5">Question5</div>
-        <div class="question" id="question5">Question5</div>
-
-        
-      </div>
-<br>
-      <button id="backToHome" onclick="handleLogoutClick()">Back To Home</button>
+    </tbody>
+</table>
       
+    </div>
+
 
       <div class="sepratorFooter"></div>
 
@@ -92,6 +106,7 @@
       </section>
       <!-- end of pageContainer -->
     </div>
+
       <script src="Answers.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
