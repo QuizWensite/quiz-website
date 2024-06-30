@@ -1,4 +1,24 @@
 let atQuestion = 1;
+document.querySelector("#questionButton1").style.color = "#B00005";
+document.querySelector("#questionButton1").style.backgroundColor = "#ffffff";
+document.querySelector("#nextArrow").style.backgroundColor = "#777777";
+function removeQuestionButtonHighlight() {
+  document.querySelector("#questionButton1").style.color = "#ffffff";
+  document.querySelector("#questionButton1").style.backgroundColor =
+    "#ffffff44";
+  document.querySelector("#questionButton2").style.color = "#ffffff";
+  document.querySelector("#questionButton2").style.backgroundColor =
+    "#ffffff44";
+  document.querySelector("#questionButton3").style.color = "#ffffff";
+  document.querySelector("#questionButton3").style.backgroundColor =
+    "#ffffff44";
+  document.querySelector("#questionButton4").style.color = "#ffffff";
+  document.querySelector("#questionButton4").style.backgroundColor =
+    "#ffffff44";
+  document.querySelector("#questionButton5").style.color = "#ffffff";
+  document.querySelector("#questionButton5").style.backgroundColor =
+    "#ffffff44";
+}
 
 const questionNumberToChange = document.querySelector("#questionNumberDynamic");
 
@@ -12,6 +32,7 @@ const quizAttempt = {
 
 const userAnswersArray = [];
 const correctAnswersArray = [];
+const questionsArray = [];
 
 async function loadQuiz() {
   const response = await fetch("test.json");
@@ -21,6 +42,7 @@ async function loadQuiz() {
   for (let i = 1; i < 6; i += 1) {
     document.querySelector(`#q${i}`).textContent =
       data.questions[i - 1].question;
+    questionsArray.push(data.questions[i - 1].question);
     correctAnswersArray[i - 1] = { choice: data.questions[i - 1].correct };
     for (let j = 1; j < 5; j += 1) {
       document.querySelector(`#q${i}a${j}Text`).textContent =
@@ -88,30 +110,70 @@ document.addEventListener(
 
 function goToQuestion(questionNumber) {
   switch (true) {
-    case questionNumber === 1 && quizAttempt.firstQuestionAnswered:
+    case questionNumber === 1:
       scrollTo(window.innerWidth * 0.98 * (questionNumber - 1), 0);
       atQuestion = questionNumber;
+      if (quizAttempt.firstQuestionAnswered) {
+        enableNext();
+      } else {
+        disableNext();
+      }
       questionNumberToChange.textContent = `${atQuestion}`;
+      removeQuestionButtonHighlight();
+      document.querySelector("#questionButton1").style.color = "#B00005";
+      document.querySelector("#questionButton1").style.backgroundColor =
+        "#ffffff";
       break;
     case questionNumber === 2 && quizAttempt.firstQuestionAnswered:
       scrollTo(window.innerWidth * 0.98 * (questionNumber - 1), 0);
       atQuestion = questionNumber;
+      if (quizAttempt.secondQuestionAnswered) {
+        enableNext();
+      } else {
+        disableNext();
+      }
       questionNumberToChange.textContent = `${atQuestion}`;
+      removeQuestionButtonHighlight();
+      document.querySelector("#questionButton2").style.color = "#B00005";
+      document.querySelector("#questionButton2").style.backgroundColor =
+        "#ffffff";
       break;
     case questionNumber === 3 && quizAttempt.secondQuestionAnswered:
       scrollTo(window.innerWidth * 0.98 * (questionNumber - 1), 0);
       atQuestion = questionNumber;
+      if (quizAttempt.thirdQuestionAnswered) {
+        enableNext();
+      } else {
+        disableNext();
+      }
       questionNumberToChange.textContent = `${atQuestion}`;
+      removeQuestionButtonHighlight();
+      document.querySelector("#questionButton3").style.color = "#B00005";
+      document.querySelector("#questionButton3").style.backgroundColor =
+        "#ffffff";
       break;
     case questionNumber === 4 && quizAttempt.thirdQuestionAnswered:
       scrollTo(window.innerWidth * 0.98 * (questionNumber - 1), 0);
       atQuestion = questionNumber;
+      if (quizAttempt.fourthQuestionAnswered) {
+        enableNext();
+      } else {
+        disableNext();
+      }
       questionNumberToChange.textContent = `${atQuestion}`;
+      removeQuestionButtonHighlight();
+      document.querySelector("#questionButton4").style.color = "#B00005";
+      document.querySelector("#questionButton4").style.backgroundColor =
+        "#ffffff";
       break;
     case questionNumber === 5 && quizAttempt.fourthQuestionAnswered:
       scrollTo(window.innerWidth * 0.98 * (questionNumber - 1), 0);
       atQuestion = questionNumber;
       questionNumberToChange.textContent = `${atQuestion}`;
+      removeQuestionButtonHighlight();
+      document.querySelector("#questionButton5").style.color = "#B00005";
+      document.querySelector("#questionButton5").style.backgroundColor =
+        "#ffffff";
       break;
   }
 }
@@ -121,22 +183,53 @@ function goNext() {
     case atQuestion === 1 && quizAttempt.firstQuestionAnswered:
       scrollTo(window.innerWidth * 0.98 * 1, 0);
       atQuestion = 2;
+      if (quizAttempt.thirdQuestionAnswered) {
+        enableNext();
+      } else {
+        disableNext();
+      }
       questionNumberToChange.textContent = "2";
+      removeQuestionButtonHighlight();
+      document.querySelector("#questionButton2").style.color = "#B00005";
+      document.querySelector("#questionButton2").style.backgroundColor =
+        "#ffffff";
       break;
     case atQuestion === 2 && quizAttempt.secondQuestionAnswered:
       scrollTo(window.innerWidth * 0.98 * 2, 0);
       atQuestion = 3;
+      if (quizAttempt.fourthQuestionAnswered) {
+        enableNext();
+      } else {
+        disableNext();
+      }
       questionNumberToChange.textContent = "3";
+      removeQuestionButtonHighlight();
+      document.querySelector("#questionButton3").style.color = "#B00005";
+      document.querySelector("#questionButton3").style.backgroundColor =
+        "#ffffff";
       break;
     case atQuestion === 3 && quizAttempt.thirdQuestionAnswered:
       scrollTo(window.innerWidth * 0.98 * 3, 0);
       atQuestion = 4;
+      if (quizAttempt.fifthQuestionAnswered) {
+        enableNext();
+      } else {
+        disableNext();
+      }
       questionNumberToChange.textContent = "4";
+      removeQuestionButtonHighlight();
+      document.querySelector("#questionButton4").style.color = "#B00005";
+      document.querySelector("#questionButton4").style.backgroundColor =
+        "#ffffff";
       break;
     case atQuestion === 4 && quizAttempt.fourthQuestionAnswered:
       scrollTo(window.innerWidth * 0.98 * 4, 0);
       atQuestion = 5;
       questionNumberToChange.textContent = "5";
+      removeQuestionButtonHighlight();
+      document.querySelector("#questionButton5").style.color = "#B00005";
+      document.querySelector("#questionButton5").style.backgroundColor =
+        "#ffffff";
       break;
   }
 }
@@ -146,22 +239,41 @@ function goPrev() {
     case atQuestion === 5:
       scrollTo(window.innerWidth * 0.98 * 3, 0);
       atQuestion = 4;
+      enableNext();
       questionNumberToChange.textContent = "4";
+      document.querySelector("#questionButton4").style.color = "#B00005";
+      document.querySelector("#questionButton4").style.backgroundColor =
+        "#ffffff";
       break;
     case atQuestion === 4:
       scrollTo(window.innerWidth * 0.98 * 2, 0);
       atQuestion = 3;
+      enableNext();
       questionNumberToChange.textContent = "3";
+      removeQuestionButtonHighlight();
+      document.querySelector("#questionButton3").style.color = "#B00005";
+      document.querySelector("#questionButton3").style.backgroundColor =
+        "#ffffff";
       break;
     case atQuestion === 3:
       scrollTo(window.innerWidth * 0.98 * 1, 0);
       atQuestion = 2;
+      enableNext();
       questionNumberToChange.textContent = "2";
+      removeQuestionButtonHighlight();
+      document.querySelector("#questionButton2").style.color = "#B00005";
+      document.querySelector("#questionButton2").style.backgroundColor =
+        "#ffffff";
       break;
     case atQuestion === 2:
       scrollTo(window.innerWidth * 0.98 * 0, 0);
       atQuestion = 1;
+      enableNext();
       questionNumberToChange.textContent = "1";
+      removeQuestionButtonHighlight();
+      document.querySelector("#questionButton1").style.color = "#B00005";
+      document.querySelector("#questionButton1").style.backgroundColor =
+        "#ffffff";
       break;
   }
 }
@@ -208,18 +320,22 @@ function enable(questionNumber) {
     case questionNumber === 1:
       quizAttempt.firstQuestionAnswered = true;
       storeAnswer(1);
+      enableNext();
       break;
     case questionNumber === 2:
       quizAttempt.secondQuestionAnswered = true;
       storeAnswer(2);
+      enableNext();
       break;
     case questionNumber === 3:
       quizAttempt.thirdQuestionAnswered = true;
       storeAnswer(3);
+      enableNext();
       break;
     case questionNumber === 4:
       quizAttempt.fourthQuestionAnswered = true;
       storeAnswer(4);
+      enableNext();
       break;
     case questionNumber === 5:
       quizAttempt.fifthQuestionAnswered = true;
@@ -227,12 +343,26 @@ function enable(questionNumber) {
         .querySelector("#submitButton")
         .addEventListener("click", finishedQuiz);
       storeAnswer(5);
+      document.querySelector("#submitButton").style.display = "flex";
       break;
   }
 }
 
+function enableNext() {
+  document.querySelector("#nextArrow").style.backgroundColor = "#B00005";
+  // document.querySelector("#nextArrow").style.display = "flex";
+  console.log("enabled");
+}
+
+function disableNext() {
+  document.querySelector("#nextArrow").style.backgroundColor = "#777777";
+  // document.querySelector("#nextArrow").style.display = "none";
+  console.log("disabled");
+}
+
 function finishedQuiz() {
   console.log("submitted");
-  sessionStorage.setItem("answers", JSON.stringify(userAnswersArray));
+  sessionStorage.setItem("userAnswers", JSON.stringify(userAnswersArray));
   sessionStorage.setItem("correctAnswers", JSON.stringify(correctAnswersArray));
+  sessionStorage.setItem("questionsText", JSON.stringify(questionsArray));
 }
