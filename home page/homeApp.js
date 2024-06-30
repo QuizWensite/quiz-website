@@ -2,6 +2,10 @@
 // https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=quiz&key=AIzaSyCf-zK2wWIBHVlSvXZRfpYHYjzcW7Mqn0U
 let youtubeContainer = document.querySelector(".youtubeContainer");
 let search = `html css js quiz`
+let htmlButton = document.querySelector(".HTML")
+let cssButton = document.querySelector(".CSS")
+let jsButton = document.querySelector(".JS")
+
 console.log(youtubeContainer)
 fetchYoutubeVideo(search);
 function fetchYoutubeVideo(search) {
@@ -42,8 +46,15 @@ function createYoutubeVideo(data) {
 }
 // ${data.items.snippet.thumbnails.default.url}
 
-
-
+htmlButton.addEventListener("click", () => {
+    localStorage.setItem("url", "htmlQus.json")
+})
+cssButton.addEventListener("click", () => {
+    localStorage.setItem("url", "cssQus.json")
+})
+jsButton.addEventListener("click", () => {
+    localStorage.setItem("url", "jsQus.json")
+})
 
 
 // cards animation
