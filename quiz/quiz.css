@@ -8,12 +8,12 @@
 
 *::-webkit-scrollbar {
     display: none;
-  }
+}
 
 #mainContainer{
     display: flex;
     flex-direction: column;
-    width: 500%;
+    width: 500vw;
     height: 100vh;
 }
 
@@ -193,6 +193,10 @@ label{
     align-items: center;
 }
 
+/* #prevArrow{
+    
+} */
+
 #submitButton{
     display: flex;
     justify-content: center;
@@ -204,4 +208,8 @@ label{
     border-radius: 1vw;
     width: 103px;
     height: 7.5vh;
+}
+
+#submitButton:hover{
+    cursor: default;
 }
