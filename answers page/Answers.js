@@ -36,42 +36,49 @@ function test() {
 }
 
 function table() {
-    let quistions = sessionStorage.getItem(questionsText);
-    let correctAnswers = sessionStorage.getItem(correctAnswers)
-    let answers = sessionStorage.getItem(userAnswers)
-    let v = 0;
+  let questions = sessionStorage.getItem("questionsText");
+  let correctAnswers = sessionStorage.getItem("correctAnswers");
+  let answers = sessionStorage.getItem("userAnswers");
+  questions = JSON.parse(questions);
+  correctAnswers = JSON.parse(correctAnswers);
+  answers = JSON.parse(answers);
+  let v = 0;
 
-    for (let i = 0; i < 5; i++) {
-        let row = document.createElement("tr");
+  for (let i = 0; i < 5; i++) {
+    let row = document.createElement("tr");
 
-        let cell1 = document.createElement("td");
-        cell1.textContent = `${i + 1}`;
-        row.appendChild(cell1);
+    let cell1 = document.createElement("td");
+    cell1.textContent = `${i + 1}`;
+    row.appendChild(cell1);
 
-        let cell2 = document.createElement("td");
-        cell2.textContent = quistions[i];
-        row.appendChild(cell2);
+    let cell2 = document.createElement("td");
+    cell2.textContent = questions[i];
+    row.appendChild(cell2);
 
-        let cell3 = document.createElement("td");
-        cell3.textContent = correctAnswers[i].answerText;
-        row.appendChild(cell3);
+    let cell3 = document.createElement("td");
+    cell3.textContent = correctAnswers[i].answerText;
+    row.appendChild(cell3);
 
-        let cell4 = document.createElement("td");
-        cell4.textContent = answers[i].answerText;
-        if (correctAnswers[i].choice === answers[i].choice) {
-            cell4.style.color = "green";
-            v += 1;
-        } else {
-            cell4.style.color = "red";
-        }
-        row.appendChild(cell4);
-
-        tableBody.appendChild(row);
+    let cell4 = document.createElement("td");
+    cell4.textContent = answers[i].answerText;
+    if (correctAnswers[i].choice === answers[i].choice) {
+      cell4.style.color = "green";
+      v += 1;
+    } else {
+      cell4.style.color = "red";
     }
-    resultNumber = v;
-    resultNumberElement.innerText = resultNumber;}
+    row.appendChild(cell4);
 
-window.onload = function() {
-    table();
-    test();
+    tableBody.appendChild(row);
+  }
+  resultNumber = v;
+  resultNumberElement.innerText = resultNumber;
+}
+
+window.onload = function () {
+  table();
+  test();
+  console.log(questions);
+  console.log(correctAnswers);
+  console.log(answers);
 };

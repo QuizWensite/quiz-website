@@ -365,4 +365,5 @@ function finishedQuiz() {
   sessionStorage.setItem("userAnswers", JSON.stringify(userAnswersArray));
   sessionStorage.setItem("correctAnswers", JSON.stringify(correctAnswersArray));
   sessionStorage.setItem("questionsText", JSON.stringify(questionsArray));
+  window.location = "/answers%20page/Answers.html";
 }
