@@ -47,14 +47,17 @@ function createYoutubeVideo(data) {
 // ${data.items.snippet.thumbnails.default.url}
 
 htmlButton.addEventListener("click", () => {
-    localStorage.setItem("url", "htmlQus.json")
-})
+  localStorage.setItem("url", "htmlQus.json");
+  window.location = "../quiz/quiz.html";
+});
 cssButton.addEventListener("click", () => {
-    localStorage.setItem("url", "cssQus.json")
-})
+  localStorage.setItem("url", "cssQus.json");
+  window.location = "../quiz/quiz.html";
+});
 jsButton.addEventListener("click", () => {
-    localStorage.setItem("url", "jsQus.json")
-})
+  localStorage.setItem("url", "jsQus.json");
+  window.location = "../quiz/quiz.html";
+});
 
 
 // cards animation
