@@ -7,7 +7,7 @@ let cssButton = document.querySelector(".CSS")
 let jsButton = document.querySelector(".JS")
 
 console.log(youtubeContainer)
-fetchYoutubeVideo(search);
+// fetchYoutubeVideo(search);
 function fetchYoutubeVideo(search) {
     fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${search}&key=AIzaSyBx66h7lf4-GtFHkQTFIUuKbiwF6ucbMnM`)
         .then(response => {
@@ -47,16 +47,29 @@ function createYoutubeVideo(data) {
 // ${data.items.snippet.thumbnails.default.url}
 
 htmlButton.addEventListener("click", () => {
-  localStorage.setItem("url", "htmlQus.json");
-  window.location = "../quiz/quiz.html";
+  if(sessionStorage.getItem("id") && sessionStorage.getItem("name")){
+    console.log("hi")
+    localStorage.setItem("url", "htmlQus.json");
+    window.location = "../quiz/quiz.html";
+  }else{window.location = "../register/register.html"}
+  
+    
 });
 cssButton.addEventListener("click", () => {
-  localStorage.setItem("url", "cssQus.json");
-  window.location = "../quiz/quiz.html";
+  if(sessionStorage.getItem("id") && sessionStorage.getItem("name")){
+    localStorage.setItem("url", "cssQus.json");
+    window.location = "../quiz/quiz.html";
+  }else{window.location = "../register/register.html"}
+  
+  
 });
 jsButton.addEventListener("click", () => {
-  localStorage.setItem("url", "jsQus.json");
-  window.location = "../quiz/quiz.html";
+  if(sessionStorage.getItem("id") && sessionStorage.getItem("name")){
+    localStorage.setItem("url", "jsQus.json");
+    window.location = "../quiz/quiz.html";
+  }else{window.location = "../register/register.html"}
+  
+  
 });
 
 
