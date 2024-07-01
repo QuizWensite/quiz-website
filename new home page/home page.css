@@ -161,12 +161,41 @@ body {
 .youtubeContainer div {
   display: flex;
   justify-content: center;
-  width: 90%;
-  margin-left: 5%;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
   /* background-color: white; */
 }
+.youtubeVideo {
+  margin-right: 1%;
+}
 .textYoutube {
-  width: 40%;
+  width: 80% !important;
+  margin-left: 2% !important;
+}
+.textYoutube {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Smooth, lighter black shadow */
+  width: 20%;
+  padding: 10px; /* Optional: Add padding for better spacing */
+  border-radius: 5px; /* Optional: Rounded corners for a softer look */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for shadow and scaling */
+  margin-left: 5%;
+}
+
+.textYoutube:hover {
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5); /* Darker, more pronounced shadow on hover */
+  transform: scale(
+    1.03
+  ); /* Slightly scales up the element for a subtle zoom effect */
+}
+.youtubeVideo {
+  width: 120%;
+}
+.textYoutube {
+  width: 20%;
 }
 /* quiz cards */
 #container {
@@ -177,28 +206,14 @@ body {
   height: 90vh;
   gap: 2.5%;
 }
-.textYoutube {
-  display: flex;
-  flex-direction: column;
-  background-color: #fafafa;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Smooth, lighter black shadow */
-  width: 50%;
-  padding: 10px; /* Optional: Add padding for better spacing */
-  border-radius: 5px; /* Optional: Rounded corners for a softer look */
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for shadow and scaling */
-}
-
-.textYoutube:hover {
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5); /* Darker, more pronounced shadow on hover */
-  transform: scale(
-    1.03
-  ); /* Slightly scales up the element for a subtle zoom effect */
-}
 .videoTitle {
   font-weight: bold;
   color: black;
   font-size: 2vw;
   margin-left: 4%;
+}
+.video {
+  margin-left: 0;
 }
 .videoDesc {
   font-weight: bold;
@@ -452,5 +467,100 @@ img.icons {
   }
   .button {
     font-size: 1.7vw;
+  }
+  .youtubeVideo {
+    margin-left: 1.9% !important;
+  }
+}
+@media (max-width: 690px) {
+  .logoImage {
+    width: 20%;
+  }
+  .upHome {
+    font-size: 5vw;
+  }
+  .innerTxt {
+    font-size: 2.2vw;
+  }
+  .description {
+    height: 40vw;
+  }
+  .descriptionTXT {
+    font-size: 2.4vw;
+  }
+  #container {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 200vh;
+  }
+  .card1,
+  .card2,
+  .card3 {
+    position: relative;
+    display: flex;
+    background-color: rgb(224, 220, 220);
+    border-radius: 1vh;
+    /* border: 1px solid rgb(53, 47, 47); */
+    overflow: hidden;
+    height: 45vh;
+  }
+  .youtubeVideo {
+    margin-left: 1.9% !important;
+  }
+  .videoTitle {
+    font-size: 2.6vw;
+  }
+  .videoDesc {
+    font-size: 2vw;
+  }
+  h2 {
+    font-size: 3.9vw;
+  }
+  .quizDuration,
+  .descOfQuiz,
+  .numberOfQuestions {
+    font-size: 2vw;
+  }
+  .button {
+    font-size: 2.2vw;
+  }
+}
+@media (max-width: 481px) {
+  .logoImage {
+    width: 29%;
+  }
+  .upHome {
+    font-size: 5.3vw;
+  }
+  .innerTxt {
+    font-size: 2.6vw;
+  }
+  .description {
+    height: 50vw;
+  }
+  .descriptionTXT {
+    font-size: 2.9vw;
+  }
+  .youtubeVideo {
+    margin-left: 1.9% !important;
+    width: 100% !important;
+    height: 35vh !important;
+  }
+  .videoTitle {
+    font-size: 3vw;
+  }
+  .videoDesc {
+    font-size: 2.3vw;
+  }
+  h2 {
+    font-size: 4.4vw;
+  }
+  .quizDuration,
+  .descOfQuiz,
+  .numberOfQuestions {
+    font-size: 2.8vw;
+  }
+  .button {
+    font-size: 2.5vw;
   }
 }

@@ -5,7 +5,7 @@ let cssButton = document.querySelector(".CSS")
 let jsButton = document.querySelector(".JS")
 
 console.log(youtubeContainer)
-// fetchYoutubeVideo(search);
+fetchYoutubeVideo(search);
 function fetchYoutubeVideo(search) {
     fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${search}&key=AIzaSyBx66h7lf4-GtFHkQTFIUuKbiwF6ucbMnM`)
         .then(response => {
