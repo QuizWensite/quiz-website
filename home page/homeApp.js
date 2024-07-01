@@ -47,14 +47,17 @@ function createYoutubeVideo(data) {
 // ${data.items.snippet.thumbnails.default.url}
 
 htmlButton.addEventListener("click", () => {
-    localStorage.setItem("url", "htmlQus.json")
-})
+  localStorage.setItem("url", "htmlQus.json");
+  window.location = "../quiz/quiz.html";
+});
 cssButton.addEventListener("click", () => {
-    localStorage.setItem("url", "cssQus.json")
-})
+  localStorage.setItem("url", "cssQus.json");
+  window.location = "../quiz/quiz.html";
+});
 jsButton.addEventListener("click", () => {
-    localStorage.setItem("url", "jsQus.json")
-})
+  localStorage.setItem("url", "jsQus.json");
+  window.location = "../quiz/quiz.html";
+});
 
 
 // cards animation
@@ -71,4 +74,16 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('#entryAnimation').forEach(element => {
         observer.observe(element);
     });
+    if (sessionStorage.getItem("id") && sessionStorage.getItem("name")) {
+      document.querySelector("#loginLogout").textContent = "Log Out";
+      document.querySelector("#loginLogout").addEventListener("click", () => {
+        sessionStorage.clear();
+        location.reload();
+      });
+    } else {
+      document.querySelector("#loginLogout").textContent = "Log In";
+      document.querySelector("#loginLogout").addEventListener("click", () => {
+        window.location = "../register/register.html";
+      });
+    }
 });

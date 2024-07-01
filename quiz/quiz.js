@@ -35,7 +35,7 @@ const correctAnswersArray = [];
 const questionsArray = [];
 
 async function loadQuiz() {
-  const response = await fetch("test.json");
+  const response = await fetch(`${localStorage.getItem("url")}`);
   const data = await response.json();
   console.log(data);
   document.querySelector("#topLeft").textContent = `${data.name} Quiz`;
