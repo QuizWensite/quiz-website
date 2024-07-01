@@ -161,8 +161,8 @@ input {
 
 .overlay {
   background: #ff416c;
-  background: -webkit-linear-gradient(to right, #1CB5E0, #000046);
-  background: linear-gradient(to right, #1CB5E0, #000046);
+  background: -webkit-linear-gradient(to right, #1cb5e0, #000046);
+  background: linear-gradient(to right, #1cb5e0, #000046);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
@@ -236,12 +236,103 @@ input {
   color: #ff4b2b;
 }
 
-#signInButton{
+#signInButton {
   background-color: #3091bd;
   border-color: #000046;
 }
 
-#signUpButton{
+#signUpButton {
   background-color: #000046;
   border-color: white;
 }
+/* Existing CSS */
+
+/* Existing CSS */
+
+/* Add media query for responsive design */
+/* Existing CSS */
+
+/* Add media query for responsive design */
+@media (max-width: 450px) {
+  .container {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  .form-container {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: all 0.6s ease-in-out;
+  }
+
+  .sign-in-container,
+  .sign-up-container {
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+  }
+
+  .container.right-panel-active .sign-in-container {
+    opacity: 1;
+    z-index: 2;
+    transform: translateX(0);
+  }
+
+  .container.right-panel-active .sign-up-container {
+    opacity: 0;
+    z-index: 1;
+    transform: translateX(100%);
+  }
+
+  .container:not(.right-panel-active) .sign-in-container {
+    opacity: 0;
+    z-index: 1;
+    transform: translateX(-100%);
+  }
+
+  .container:not(.right-panel-active) .sign-up-container {
+    opacity: 1;
+    z-index: 2;
+    transform: translateX(0);
+  }
+
+  .overlay-container {
+    display: none;
+  }
+
+  button {
+    padding: 10px 30px;
+  }
+
+  input {
+    padding: 10px 12px;
+    margin: 5px 0;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  span {
+    font-size: 10px;
+  }
+
+  a {
+    font-size: 12px;
+  }
+}
+
+/* Existing CSS */
