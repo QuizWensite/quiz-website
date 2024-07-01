@@ -119,7 +119,7 @@ signUpButton.addEventListener("click", (e) => {
     };
     arrayOfUsers.push(userObj);
     window.localStorage.setItem("Users", JSON.stringify(arrayOfUsers));
-    window.sessionStorage.setItem("name", signUpName);
+    window.sessionStorage.setItem("name", signUpName.value);
     window.sessionStorage.setItem("id", id);
     window.location = "../newHome/homepage.html";
     
