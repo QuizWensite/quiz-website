@@ -93,11 +93,11 @@ body {
   width: 100%;
   border-collapse: separate; 
   border-spacing: 0 5px; 
-  border: 1px solid #b00005;
+  border: 1px solid #aac2ff;
   height: 55vh;
   margin-top: 50px; 
   font-weight: bold;
-  background-color: #EEE8E2;
+  background-color: white;
 }
 
 .tableAnswers th, .tableAnswers td {
@@ -108,7 +108,7 @@ body {
 }
 
 .tableAnswers tbody tr, .tableAnswers thead {
-  background-color: #5887FF;
+  background-color: #aac2ff;
   
 }
 
