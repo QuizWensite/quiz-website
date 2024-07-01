@@ -147,7 +147,7 @@ btn.addEventListener("click", (e) => {
       userFound = true;
       window.sessionStorage.setItem("name", arrayOfUsers[i].name);
       window.sessionStorage.setItem("id", arrayOfUsers[i].id);
-      window.location = "../home%20page/homePage.html"; // put home page
+      window.location = "../new home page/homePage.html"; // put home page
       break;
     }
   }
