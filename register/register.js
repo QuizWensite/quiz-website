@@ -1,12 +1,22 @@
 const signUpButtonGhost = document.getElementById("signUp");
 const signInButtonGhost = document.getElementById("signIn");
 const container = document.getElementById("container");
+const dont = document.querySelector("#dontHaveAccount");
+const have = document.querySelector("#haveAccount");
 
 signUpButtonGhost.addEventListener("click", () => {
   container.classList.add("right-panel-active");
 });
 
+dont.addEventListener("click", () => {
+  container.classList.add("right-panel-active");
+});
+
 signInButtonGhost.addEventListener("click", () => {
+  container.classList.remove("right-panel-active");
+});
+
+have.addEventListener("click", () => {
   container.classList.remove("right-panel-active");
 });
 
@@ -101,7 +111,6 @@ let userObj = {};
 signUpButton.addEventListener("click", (e) => {
   e.preventDefault();
   if (emailFlag && passwordFlag && fullNameFlag) {
-    console.log("hi");
     userObj = {
       id: id++,
       name: signUpName.value,
@@ -118,25 +127,24 @@ signUpButton.addEventListener("click", (e) => {
 });
 
 let btn = document.getElementById("signInButton");
-let navgateToWelcome = false;
 let signInAlert = document.querySelector("#signInAlert");
+let signInEmail = document.getElementById("signInEmail");
+let signInPassword = document.getElementById("signInPassword");
 
 btn.addEventListener("click", (e) => {
   e.preventDefault();
-  let email = document.getElementById("signInEmail").value;
-  let password = document.getElementById("signInPassword").value;
 
   let userFound = false;
 
   for (let i = 0; i < arrayOfUsers.length; i++) {
     if (
-      arrayOfUsers[i].email.value === email.value &&
-      arrayOfUsers[i].password.value === password.value
+      arrayOfUsers[i].email === signInEmail.value &&
+      arrayOfUsers[i].password === signInPassword.value
     ) {
       userFound = true;
-      window.sessionStorage.setItem("name", arrayOfUsers[i].FullName);
+      window.sessionStorage.setItem("name", arrayOfUsers[i].name);
       window.sessionStorage.setItem("id", arrayOfUsers[i].id);
-      window.location = "./welcome.html"; // put home page
+      window.location = "../home%20page/homePage.html"; // put home page
       break;
     }
   }
