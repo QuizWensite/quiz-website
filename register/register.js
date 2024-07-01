@@ -10,6 +10,9 @@ signUpButtonGhost.addEventListener("click", () => {
 
 dont.addEventListener("click", () => {
   container.classList.add("right-panel-active");
+  if (window.innerWidth < 700) {
+    container.classList.remove("right-panel-active");
+  }
 });
 
 signInButtonGhost.addEventListener("click", () => {
@@ -18,6 +21,9 @@ signInButtonGhost.addEventListener("click", () => {
 
 have.addEventListener("click", () => {
   container.classList.remove("right-panel-active");
+  if (window.innerWidth < 700) {
+    container.classList.add("right-panel-active");
+  }
 });
 
 let emailReg =
