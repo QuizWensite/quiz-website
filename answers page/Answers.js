@@ -5,6 +5,8 @@ let comment = document.getElementById("comment");
 let Container2 = document.getElementById("Container2");
 let tableBody = document.getElementById("tableBody");
 let resultNumberElement = document.getElementById("resultNumber");
+let resultNumber2 = document.getElementById("resultNumber2");
+
 let resultNumber = 0;
 
 function handleLogoutClick() {
@@ -22,8 +24,8 @@ function showAnswers() {
 }
 
 function changeResult() {
-  Container2.style.background = "rgb(58, 153, 58)";
-  image.src = "Hands.png";
+  Container2.style.background = "#7AFF7A";
+  image.src = "2.png";
   comment.innerHTML = "Congratulations";
 }
 
@@ -70,10 +72,12 @@ function table() {
     tableBody.appendChild(row);
   }
   resultNumber = v;
-  resultNumberElement.innerText = resultNumber;
 }
 
 window.onload = function () {
   table();
   test();
+  resultNumberElement.innerText = resultNumber;
+  resultNumber2.innerText = resultNumber;
+console.log(resultNumber);
 };

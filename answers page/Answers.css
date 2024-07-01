@@ -22,13 +22,14 @@
 {
   text-align: center;
   color: aliceblue;
-  background-color: #e76266;
+  background-color: #FF0D0D;
   font-weight: bold;
   height: 80vh;
   display: block;
   z-index: 1;
   font-size: 30px;
   width: 35%;
+  margin-top: -10%;
 }
 .button1{
  border-radius: 20px;
@@ -41,33 +42,7 @@ body {
   background-color: white;
   
 }
-/* nav */
-.navbar {
-  padding: 0;
-}
-.btn {
-  background-color: #b00005;
-  color: white;
-}
-.container-fluid {
-  margin-left: 5%;
-  padding: 0;
-  background-color: #fef4e8;
-  width: 90%;
-}
-.contactUs {
-  color: black;
-}
-.contactUs:hover {
-  color: #b00005 !important;
-}
-/* login button */
-.btn {
-  margin-right: 3%;
-}
-.logoImage {
-  width: 23%;
-}
+
 /* body */
 .pageContainer {
   margin-top: 3.5%;
@@ -76,16 +51,11 @@ body {
   height: 55vh;
 }
 
-.seprator {
-  background-color: #b00005;
-  height: 0.5vh;
-  width: 88%;
-  margin-left: 7%;
 
-}
 .container
 {
   filter: blur(3px);
+  margin-top: 5%;
 }
 
 
@@ -116,14 +86,18 @@ td {
   color: white;
 }
 
+#Result
+{
+  margin-left: 70%;
+}
 
 /* footer */
-.sepratorFooter {
-  background-color: #b00005;
+.seprator {
+  background-color: #355199;
   height: 0.5vh;
   width: 88%;
   margin-left: 7%;
-  margin-top: 3%;
+  margin-top: 1%;
 
 }
 /* footer */
