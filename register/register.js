@@ -121,7 +121,7 @@ signUpButton.addEventListener("click", (e) => {
     window.localStorage.setItem("Users", JSON.stringify(arrayOfUsers));
     window.sessionStorage.setItem("name", signUpName);
     window.sessionStorage.setItem("id", id);
-    window.location = "../home%20page/homePage.html";
+    window.location = "../newHome/homepage.html";
     
     // window.location = "../home page/homePage.html";
   } else {
@@ -147,7 +147,7 @@ btn.addEventListener("click", (e) => {
       userFound = true;
       window.sessionStorage.setItem("name", arrayOfUsers[i].name);
       window.sessionStorage.setItem("id", arrayOfUsers[i].id);
-      window.location = "../home%20page/homePage.html"; // put home page
+      window.location = "../newHome/homePage.html"; // put home page
       break;
     }
   }

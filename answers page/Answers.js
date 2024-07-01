@@ -13,7 +13,7 @@ function handleLogoutClick() {
 }
 
 function backToHome() {
-  window.location.href = "../home page/homePage.html";
+  window.location.href = "../newHome/homepage.html";
 }
 
 function showAnswers() {

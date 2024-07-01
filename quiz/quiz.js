@@ -1,5 +1,5 @@
 let atQuestion = 1;
-document.querySelector("#questionButton1").style.color = "#B00005";
+document.querySelector("#questionButton1").style.color = "#355199";
 document.querySelector("#questionButton1").style.backgroundColor = "#ffffff";
 document.querySelector("#nextArrow").style.backgroundColor = "#777777";
 function removeQuestionButtonHighlight() {
@@ -58,9 +58,12 @@ async function loadQuiz() {
 }
 
 window.addEventListener("load", function () {
+  if (!(sessionStorage.getItem("id") && sessionStorage.getItem("name"))) {
+    window.location = "../register/register.html";
+  }
   this.scrollTo(0, 0);
   loadQuiz();
-  let timer = 5; // 5 minutes in seconds
+  let timer = 300; // 5 minutes in seconds
   const timerElement = document.getElementById("time");
   const countdown = setInterval(() => {
     let minutes = Math.floor(timer / 60);
@@ -131,7 +134,7 @@ function goToQuestion(questionNumber) {
       }
       questionNumberToChange.textContent = `${atQuestion}`;
       removeQuestionButtonHighlight();
-      document.querySelector("#questionButton1").style.color = "#B00005";
+      document.querySelector("#questionButton1").style.color = "#355199";
       document.querySelector("#questionButton1").style.backgroundColor =
         "#ffffff";
       break;
@@ -145,7 +148,7 @@ function goToQuestion(questionNumber) {
       }
       questionNumberToChange.textContent = `${atQuestion}`;
       removeQuestionButtonHighlight();
-      document.querySelector("#questionButton2").style.color = "#B00005";
+      document.querySelector("#questionButton2").style.color = "#355199";
       document.querySelector("#questionButton2").style.backgroundColor =
         "#ffffff";
       break;
@@ -159,7 +162,7 @@ function goToQuestion(questionNumber) {
       }
       questionNumberToChange.textContent = `${atQuestion}`;
       removeQuestionButtonHighlight();
-      document.querySelector("#questionButton3").style.color = "#B00005";
+      document.querySelector("#questionButton3").style.color = "#355199";
       document.querySelector("#questionButton3").style.backgroundColor =
         "#ffffff";
       break;
@@ -173,7 +176,7 @@ function goToQuestion(questionNumber) {
       }
       questionNumberToChange.textContent = `${atQuestion}`;
       removeQuestionButtonHighlight();
-      document.querySelector("#questionButton4").style.color = "#B00005";
+      document.querySelector("#questionButton4").style.color = "#355199";
       document.querySelector("#questionButton4").style.backgroundColor =
         "#ffffff";
       break;
@@ -182,7 +185,7 @@ function goToQuestion(questionNumber) {
       atQuestion = questionNumber;
       questionNumberToChange.textContent = `${atQuestion}`;
       removeQuestionButtonHighlight();
-      document.querySelector("#questionButton5").style.color = "#B00005";
+      document.querySelector("#questionButton5").style.color = "#355199";
       document.querySelector("#questionButton5").style.backgroundColor =
         "#ffffff";
       break;
@@ -201,7 +204,7 @@ function goNext() {
       }
       questionNumberToChange.textContent = "2";
       removeQuestionButtonHighlight();
-      document.querySelector("#questionButton2").style.color = "#B00005";
+      document.querySelector("#questionButton2").style.color = "#355199";
       document.querySelector("#questionButton2").style.backgroundColor =
         "#ffffff";
       break;
@@ -215,7 +218,7 @@ function goNext() {
       }
       questionNumberToChange.textContent = "3";
       removeQuestionButtonHighlight();
-      document.querySelector("#questionButton3").style.color = "#B00005";
+      document.querySelector("#questionButton3").style.color = "#355199";
       document.querySelector("#questionButton3").style.backgroundColor =
         "#ffffff";
       break;
@@ -229,7 +232,7 @@ function goNext() {
       }
       questionNumberToChange.textContent = "4";
       removeQuestionButtonHighlight();
-      document.querySelector("#questionButton4").style.color = "#B00005";
+      document.querySelector("#questionButton4").style.color = "#355199";
       document.querySelector("#questionButton4").style.backgroundColor =
         "#ffffff";
       break;
@@ -238,7 +241,7 @@ function goNext() {
       atQuestion = 5;
       questionNumberToChange.textContent = "5";
       removeQuestionButtonHighlight();
-      document.querySelector("#questionButton5").style.color = "#B00005";
+      document.querySelector("#questionButton5").style.color = "#355199";
       document.querySelector("#questionButton5").style.backgroundColor =
         "#ffffff";
       break;
@@ -252,7 +255,7 @@ function goPrev() {
       atQuestion = 4;
       enableNext();
       questionNumberToChange.textContent = "4";
-      document.querySelector("#questionButton4").style.color = "#B00005";
+      document.querySelector("#questionButton4").style.color = "#355199";
       document.querySelector("#questionButton4").style.backgroundColor =
         "#ffffff";
       break;
@@ -262,7 +265,7 @@ function goPrev() {
       enableNext();
       questionNumberToChange.textContent = "3";
       removeQuestionButtonHighlight();
-      document.querySelector("#questionButton3").style.color = "#B00005";
+      document.querySelector("#questionButton3").style.color = "#355199";
       document.querySelector("#questionButton3").style.backgroundColor =
         "#ffffff";
       break;
@@ -272,7 +275,7 @@ function goPrev() {
       enableNext();
       questionNumberToChange.textContent = "2";
       removeQuestionButtonHighlight();
-      document.querySelector("#questionButton2").style.color = "#B00005";
+      document.querySelector("#questionButton2").style.color = "#355199";
       document.querySelector("#questionButton2").style.backgroundColor =
         "#ffffff";
       break;
@@ -282,7 +285,7 @@ function goPrev() {
       enableNext();
       questionNumberToChange.textContent = "1";
       removeQuestionButtonHighlight();
-      document.querySelector("#questionButton1").style.color = "#B00005";
+      document.querySelector("#questionButton1").style.color = "#355199";
       document.querySelector("#questionButton1").style.backgroundColor =
         "#ffffff";
       break;
@@ -360,7 +363,7 @@ function enable(questionNumber) {
 }
 
 function enableNext() {
-  document.querySelector("#nextArrow").style.backgroundColor = "#B00005";
+  document.querySelector("#nextArrow").style.backgroundColor = "#355199";
   // document.querySelector("#nextArrow").style.display = "flex";
   console.log("enabled");
 }

@@ -38,7 +38,7 @@
 
 
 body {
-  background-color: #fef4e8;
+  background-color: white;
   
 }
 /* nav */
@@ -104,11 +104,16 @@ body {
   padding: 8px;
   text-align: center;
   width: 25%;
+  color: white;
 }
 
 .tableAnswers tbody tr, .tableAnswers thead {
-  background-color: aliceblue;
+  background-color: #5887FF;
   
+}
+
+td {
+  color: white;
 }
 
 
