@@ -147,11 +147,8 @@ btn.addEventListener("click", (e) => {
       userFound = true;
       window.sessionStorage.setItem("name", arrayOfUsers[i].name);
       window.sessionStorage.setItem("id", arrayOfUsers[i].id);
-<<<<<<< HEAD
       window.location = "../newHome/homePage.html"; // put home page
-=======
-      window.location = "../new home page/homePage.html"; // put home page
->>>>>>> 28c0e7765772c1f32efd1b625c1a427c511f5a6f
+
       break;
     }
   }
