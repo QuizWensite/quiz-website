@@ -119,7 +119,10 @@ signUpButton.addEventListener("click", (e) => {
     };
     arrayOfUsers.push(userObj);
     window.localStorage.setItem("Users", JSON.stringify(arrayOfUsers));
-    alert("Account created");
+    window.sessionStorage.setItem("name", signUpName);
+    window.sessionStorage.setItem("id", id);
+    window.location = "../home%20page/homePage.html";
+    
     // window.location = "../home page/homePage.html";
   } else {
     alert("Please fill out all fields correctly.");

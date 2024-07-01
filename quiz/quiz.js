@@ -30,7 +30,7 @@ const quizAttempt = {
   fifthQuestionAnswered: false,
 };
 
-const userAnswersArray = [];
+const userAnswersArray = [0, 0, 0, 0, 0];
 const correctAnswersArray = [];
 const questionsArray = [];
 
@@ -60,7 +60,7 @@ async function loadQuiz() {
 window.addEventListener("load", function () {
   this.scrollTo(0, 0);
   loadQuiz();
-  let timer = 300; // 5 minutes in seconds
+  let timer = 5; // 5 minutes in seconds
   const timerElement = document.getElementById("time");
   const countdown = setInterval(() => {
     let minutes = Math.floor(timer / 60);
@@ -80,6 +80,13 @@ window.addEventListener("load", function () {
     if (timer <= 0) {
       clearInterval(countdown);
       timerElement.textContent = "00:00"; //end quiz here
+      sessionStorage.setItem("userAnswers", JSON.stringify(userAnswersArray));
+      sessionStorage.setItem(
+        "correctAnswers",
+        JSON.stringify(correctAnswersArray)
+      );
+      sessionStorage.setItem("questionsText", JSON.stringify(questionsArray));
+      window.location = "/answers%20page/Answers.html";
     }
 
     timer--;
@@ -107,6 +114,10 @@ document.addEventListener(
   },
   { passive: false }
 );
+
+function checkAnswer(choice) {
+  document.querySelector(`#${choice}`).checked = true;
+}
 
 function goToQuestion(questionNumber) {
   switch (true) {

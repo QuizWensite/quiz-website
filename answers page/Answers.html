@@ -18,8 +18,8 @@
  <div>You scored :<span id="resultNumber" > </span> out of 5</div>
  <div id="comment">Try again</div>
  <br>
- <button class="btn bg-white text-dark " type="submit" onclick="handleLogoutClick2()">Show Answers</button>
- <button class="btn bg-white text-dark " type="submit" onclick="handleLogoutClick()">Back to Home</button>
+ <button class="btn bg-white text-dark " type="submit" onclick="showAnswers()">Show Answers</button>
+ <button class="btn bg-white text-dark " type="submit" onclick="backToHome()">Back to Home</button>
 
 </div>
 </div>
@@ -27,9 +27,8 @@
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"
-          ><img class="logoImage" src="Logo.png" alt="Logo"
-        /></a>
+        <a class="navbar-brand">
+          <img class="logoImage" src="Logo.png" alt="Logo" onclick="backToHome()"/></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -47,7 +46,7 @@
               <a class="nav-link contactUs text-dark" href="#">contact us</a>
             </li>
             <li class="nav-item">
-              <button class="btn ms-3" type="submit" onclick="handleLogoutClick0()">LogOut</button>
+              <button class="btn ms-3" type="submit" onclick="handleLogoutClick()">LogOut</button>
             </li>
           </ul>
         </div>
@@ -74,36 +73,7 @@
     </div>
 
 
-      <div class="sepratorFooter"></div>
 
-       <!-- footer -->
-       <section class="footer">
-        <div class="footerContainer">
-          <a href=""
-            ><img class="footerLogo" src="Logo.png" alt=""
-          /></a>
-          <div class="rightImageContainer">
-            <a href=""
-              ><img
-                class="footerLogoEmail"
-                src="email icon.png"
-                alt=""
-            /></a>
-            <a href=""
-              ><img
-                class="footerLogoLinkedIn"
-                src="linkedIn icon.png"
-                alt=""
-            /></a>
-            <a href=""
-              ><img
-                class="footerLogoGithub"
-                src="github icon.png"
-                alt=""
-            /></a>
-          </div>
-        </div>
-      </section>
       <!-- end of pageContainer -->
     </div>
 

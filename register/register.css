@@ -46,7 +46,7 @@ a {
 button {
   border-radius: 20px;
   border: 1px solid #ff4b2b;
-  background-color: #ff4b2b;
+  /* background-color: #ff4b2b; */
   color: #ffffff;
   font-size: 12px;
   font-weight: bold;
@@ -161,8 +161,8 @@ input {
 
 .overlay {
   background: #ff416c;
-  background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
-  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  background: -webkit-linear-gradient(to right, #1CB5E0, #000046);
+  background: linear-gradient(to right, #1CB5E0, #000046);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
@@ -234,4 +234,14 @@ input {
 #signInAlert {
   display: none;
   color: #ff4b2b;
+}
+
+#signInButton{
+  background-color: linear-gradient( #1CB5E0, #000046);;
+  border-color: #000046;
+}
+
+#signUpButton{
+  background-color: #000046;
+  border-color: white;
 }

@@ -5,6 +5,10 @@
   /* font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif; */
 }
+
+/* .navbar-brand > img :hover{
+  cursor: pointer;
+} */
 .parent
 {
   display: flex;

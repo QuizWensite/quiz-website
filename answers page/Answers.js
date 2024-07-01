@@ -6,33 +6,31 @@ let Container2 = document.getElementById("Container2");
 let tableBody = document.getElementById("tableBody");
 let resultNumberElement = document.getElementById("resultNumber");
 let resultNumber = 0;
-function handleLogoutClick0() {
-    window.location.href = "../quiz/quiz.html";
-}
 
 function handleLogoutClick() {
-    window.location.href = "../home page/homePage.html";
+  sessionStorage.clear();
+  window.location.href = "../register/register.html";
 }
 
-function handleLogoutClick2() {
-    parent.style.display = "none";
-    container.style.filter = "none";
-    console.log("1");
+function backToHome() {
+  window.location.href = "../home page/homePage.html";
+}
+
+function showAnswers() {
+  parent.style.display = "none";
+  container.style.filter = "none";
 }
 
 function changeResult() {
-    Container2.style.background = "rgb(58, 153, 58)";
-    image.src = "Hands.png";
-    comment.innerHTML = "Congratulations";
+  Container2.style.background = "rgb(58, 153, 58)";
+  image.src = "Hands.png";
+  comment.innerHTML = "Congratulations";
 }
 
 function test() {
-    if (resultNumber > 2) {
-        changeResult();
-        console.log("yes");
-    } else {
-        console.log("NO");
-    }
+  if (resultNumber > 2) {
+    changeResult();
+  }
 }
 
 function table() {
@@ -60,7 +58,7 @@ function table() {
     row.appendChild(cell3);
 
     let cell4 = document.createElement("td");
-    cell4.textContent = answers[i].answerText;
+    cell4.textContent = answers[i].answerText || "No Answer";
     if (correctAnswers[i].choice === answers[i].choice) {
       cell4.style.color = "green";
       v += 1;
@@ -78,7 +76,4 @@ function table() {
 window.onload = function () {
   table();
   test();
-  console.log(questions);
-  console.log(correctAnswers);
-  console.log(answers);
 };
