@@ -40,6 +40,28 @@ html {
   ); /* Slightly opaque background to enhance blur effect */
   padding: 0; /* Remove default padding */
 }
+.navbar-collapse.collapse.show {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* White background with opacity */
+  backdrop-filter: blur(5px); /* Blur effect */
+  -webkit-backdrop-filter: blur(5px); /* For Safari */
+  border-radius: 10px; /* Optional: rounded corners */
+  padding: 10px; /* Optional: padding for better visual appearance */
+}
+.navbar-collapse.collapse.show .btn {
+  width: 25%; /* Adjust button width when menu is shown */
+  margin: auto; /* Center the button horizontally */
+}
+.logoImage {
+  width: 50px; /* Adjust the size of the logo image */
+}
+.navbar-toggler {
+  border: none; /* Optional: Remove border from the toggle button */
+}
 .navbar-brand {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
