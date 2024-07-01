@@ -14,16 +14,22 @@
 <body onload="table()">
   <div class="parent" id="parent">
 <div id="Container2" class="Container2">
- <img src="Heart.png" id="image">
+ <img src="1.png" id="image" style="width: 50%;">
  <div>You scored :<span id="resultNumber" > </span> out of 5</div>
  <div id="comment">Try again</div>
  <br>
- <button class="btn bg-white text-dark " type="submit" onclick="showAnswers()">Show Answers</button>
- <button class="btn bg-white text-dark " type="submit" onclick="backToHome()">Back to Home</button>
+ <button class="btn bg-white text-dark border-white rounded-pill " type="submit"  onclick="showAnswers()">Show Answers</button>
+ <button class="btn bg-white text-dark border-white rounded-pill " type="submit"  onclick="backToHome()">Back to Home</button>
 
 </div>
 </div>
+
+
+
   <div class="container" id="container">
+    <button class="btn bg-primary  text-white border-white rounded-pill " style="margin-left: 7%;" type="submit"  onclick="backToHome()">Back to Home</button>
+    <span id="Result">Result : <span id="resultNumber2"></span> /5 </span>
+    <div class="seprator"></div>
 
 
 <div class="pageContainer"> 
@@ -45,6 +51,7 @@
     </div>
 
 
+    <div class="seprator2"></div>
 
       <!-- end of pageContainer -->
     </div>
