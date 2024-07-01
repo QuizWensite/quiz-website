@@ -127,6 +127,7 @@ signUpButton.addEventListener("click", (e) => {
     window.localStorage.setItem("Users", JSON.stringify(arrayOfUsers));
     window.sessionStorage.setItem("name", signUpName.value);
     window.sessionStorage.setItem("id", id);
+    alert("You Have Successfully Signed Up");
     window.location = "../newHome/homepage.html";
     
     // window.location = "../home page/homePage.html";
