@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form</title>
+    <style>
+        #container {
+  background-color: #faf6f6;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+#picture {
+  width: 40%;
+  height: 100%;
+  background-color: #faf6f6;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.8);
+
+
+}
+
+#form {
+    box-shadow: inset 0 2px 5px rgba(43, 2, 2, 0.8);
+  width: 60%;
+  height: 100%;
+  background-color: #fef4e8;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+  animation: form-slide-in 3s ease-in-out forwards; 
+}
+
+img {
+  width: 70%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 10%;
+  margin-left: 15%;
+}
+
+#pra {
+  text-align: center;
+  font-size: 3rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #b00005;
+}
+
+.inp {
+  background-color: #ffffff;
+  width: 30%;
+  height: 5%;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 2px 5px rgba(43, 2, 2, 0.8);
+  
+  border: 2px solid #fef4e8; 
+  transition: border-color 0.3s ease-in-out;
+}
+
+.inp:focus {
+  border-color: #b00c00; 
+  animation: input-grow 1.8s ease-in-out;
+}
+
+#button {
+  background-color: #b00005;
+  color: white;
+  margin-left: 23%;
+  width: 160px;
+  height: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 7%;
+}
+
+#button:hover {
+  background-color: #c9302c;
+  color: white;
+  box-shadow: 0 2px 5px #c9302c(0, 0, 0, 0.2);
+}
+
+#textDownButton {
+  margin-left: 20%;
+}
+
+label {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(17, 17, 17);
+}
+
+.fontfamily {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  color: rgb(17, 17, 17);
+}
+
+.checkboxtext {
+  color: rgb(17, 17, 17);
+}
+
+.display {
+  display: flex;
+}
+
+
+
+
+@keyframes form-slide-in {
+  from {
+    transform: translateX(100%); 
+  }
+  to {
+    transform: translateX();
+  }
+}
+    </style>
+
+
+
+<!-- <script>
+    /*
+function saveData() {
+       localStorage.setItem("PASSWORD", password);
+ localStorage.setItem("EMAIL", yourEmail);
+
+const yourPassword = document.getElementById("Create password").value;
+const yourEmail = document.getElementById("Email").value; 
+
+
+const user = {
+  "Email": yourEmail,
+  "Password": yourPassword
+};
+
+
+const existingUsers = JSON.parse(localStorage.getItem("users")) || []; 
+if (existingUsers.some(existingUser => existingUser.Email === yourEmail)) {
+  alert("This email is already registered."); 
+} else {
+  existingUsers.push(user);
+  localStorage.setItem("users", JSON.stringify(existingUsers)); 
+  alert("Data saved successfully!");
+}
+}
+
+
+*/
+function saveddata(){
+ const yourpassword = document.getElementById("Create password").value;
+const yourEmail = document.getElementById("Email").value;
+const user=new Array();
+// user=JSON.parse(localStorage.getItem("user"))?JSON.parse(localStorage.getItem("user"))||[]
+// if(user.some((v) => {
+//  return v.Email==Email
+// })){alert("is done")}else{
+//   user.push({
+//  "EMAIL" :ourEmail;
+// "PASSWORD" :yourpassword;
+//  })
+//  localStorage.setItem("users",JSON.stringfy(user))
+//  }
+
+}
+function validateEmail() {
+    event.preventDefault();
+    const yourEmail = document.getElementById("Email").value;
+    
+const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const aleartDiv = document.getElementById("alertEmail");
+
+
+    if (regex.test(yourEmail)) {
+        aleartDiv.textContent = "email is valid";
+        aleartDiv.style.color = "green";
+    
+    } else {
+        aleartDiv.textContent = "Pleas enter a valid Emil";
+        aleartDiv.style.color = "red";
+    }
+    localStorage.setItem("EMAIL", yourEmail);
+
+}
+
+function validatePassword() {
+
+  
+  event.preventDefault();
+  const password = document.getElementById("Create password").value;
+ 
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  const aleartDiv = document.getElementById("alertPassword");
+  
+  if (regex.test(password)) {
+        aleartDiv.textContent = "Password is valid";
+        aleartDiv.style.color = "green";
+        localStorage.setItem("PASSWORD", password)
+
+    } else {
+        aleartDiv.textContent = "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one digit, and one special character.";
+        aleartDiv.style.color = "red";
+    }
+
+
+
+}
+function validateConfirmPassword() {
+  const passwordInput = document.getElementById('Create password');
+  const confirmPasswordInput = document.getElementById('Confirm password');
+  const alertDiv = document.getElementById('alertConfirm');
+
+  const password = passwordInput.value.trim(); 
+  const confirmPassword = confirmPasswordInput.value.trim();
+
+  if (password === confirmPassword) {
+    alertDiv.textContent = "Password matches!";
+    alertDiv.style.color = "green";
+  } else {
+    alertDiv.textContent = "Passwords do not match. Please try again.";
+    alertDiv.style.color = "red";
+    confirmPasswordInput.value = ""; 
+  }
+}
+
+
+
+
+function validall(){
+
+    validateEmail()
+    validatePassword() 
+    validateConfirmPassword()
+    saveData()
+   
+
+} -->
+
+</script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="picture">
+        <img
+          src="premium_photo-1663045960088-fda623767cf1.avif"
+          alt="Image description"
+        />
+        <p id="pra">Enhance Your Skills with Every Quiz</p>
+      </div>
+      <div id="form">
+        <form method="post"  action="" onsubmit="validall(event)">
+        <h1>Create an account</h1>
+
+        <label for="name">FullName:</label><br />
+        <input class="inp" type="text" id="inputFullName" name="name" required />
+        <br /><br />
+        <label for="name">Email:</label><br />
+        <input class="inp" type="email" id="Email" name="name" />
+
+        <p style="color: black">eg: username@domain.com</p>
+<div id="alertEmail"></div>
+        <br /><br />
+        /> <label for="name">Create Password:</label><br />
+        <input class="inp" type="password" id="Create password" name="name" />
+        <div id="alertPassword"></div>
+        <br /><br />
+        <label for="name">Confirm Password:</label><br />
+        <input class="inp" type="password" id="Confirm password" name="name" />
+        <div id="alertConfirm"></div>
+
+        <br /><br /><br />
+        <div class="display">
+          <input class="checkboxtext" type="checkbox" />
+
+          <p style="color: black">
+            agree to the Terms and Conditions and Privacy Policy.
+          </p>
+        </div>
+        <br /><br />
+        <div><button id="button">Sign up</button><br /><br /></div>
+        <div id="textDownButton">
+          <a class="fontfamily" href="testjs.html">Already have an account? </a>
+        </div>
+      </div>
+    </div>
+</form>
+
+  </body>
+</html>
