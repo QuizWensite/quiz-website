@@ -31,19 +31,19 @@ function createYoutubeVideo(data) {
     let newVideo = document.createElement("div")
     newVideo.classList.add = `flexYoutubeContainer`
     newVideo.innerHTML = `
+    <div class="video">
+    <iframe
+    class="youtubeVideo"
+    width="600" 
+    height="350" 
+    src="https://www.youtube.com/embed/${data.id.videoId}" 
+    frameborder="0" 
+    allowfullscreen>
+    </iframe>
     <div class="textYoutube">
           <p class="videoTitle">${data.snippet.title}</p>
           <p class="videoDesc">${data.snippet.description}</p>
         </div>
-        <div class="video">
-          <iframe
-            class="youtubeVideo"
-            width="600" 
-            height="350" 
-            src="https://www.youtube.com/embed/${data.id.videoId}" 
-            frameborder="0" 
-            allowfullscreen>
-          </iframe>
         </div>
     `
     youtubeContainer.appendChild(newVideo)
