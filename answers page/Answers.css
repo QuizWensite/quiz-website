@@ -100,6 +100,14 @@ td {
   margin-top: 1%;
 
 }
+.seprator2
+{  background-color: #355199;
+  height: 0.5vh;
+  width: 88%;
+  margin-left: 7%;
+  margin-top: 4%;
+
+}
 /* footer */
 .footerContainer {
   margin-top: 1%;
@@ -132,8 +140,11 @@ margin-left: 40%;
   width: 100%;
 }
 
-@media (min-width : 376px) and (max-width: 431px) {
-
+@media (min-width : 375px) and (max-width: 431px) {
+.seprator2
+{
+  margin-top: 200%;
+}
   #backToHome{
     margin-top: 7%;
     width: 32%;
@@ -156,7 +167,10 @@ margin-left: 40%;
 }
 
 @media (max-width: 360px) {
-
+  .seprator2
+  {
+    margin-top: 200%;
+  }
   #backToHome{
     margin-top: 7%;
     width: 30%;
@@ -180,7 +194,10 @@ margin-left: 40%;
 }
 
 @media (min-width : 768px) and (max-width: 1024px) {
-
+  .seprator2
+  {
+    margin-top: 25%;
+  }
   #backToHome{
     margin-top: 6%;
     width: 20%;
@@ -210,7 +227,10 @@ font-size: 140%;
 
 
 @media (width: 540px) {
-
+  .seprator2
+  {
+    margin-top: 100%;
+  }
   #backToHome{
     margin-top: 4%;
     width: 22%;
@@ -235,7 +255,10 @@ font-size: 140%;
 }
 
 @media (max-width: 344px) {
-
+  .seprator2
+  {
+    margin-top: 180%;
+  }
   #backToHome{
     margin-top: 7%;
     width: 35%;
