@@ -1,5 +1,6 @@
 let youtubeContainer = document.querySelector(".youtubeContainer");
 let search = `html css js quiz`;
+let paraWelcome = document.querySelector(".paraAboveImage")
 
 console.log(youtubeContainer);
 // fetchYoutubeVideo(search);
@@ -110,3 +111,13 @@ document.querySelector("#frontButton").addEventListener("click", () => {
     window.location = "../register/register.html";
   }
 });
+window.onload = () => {
+
+  if (sessionStorage.getItem("name")) {
+    let name = sessionStorage.getItem("name")
+    let welcomeMsg = document.querySelector(".welcomeMsg")
+    welcomeMsg.classList.add("upHome")
+    welcomeMsg.innerHTML = ` Welcome , ${name}
+  `
+  }
+} 
