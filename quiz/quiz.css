@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+
 * {
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box !important;
+  font-family: "Montserrat", sans-serif;
+
   /* overflow-x: hidden;
     overflow-y: hidden; */
 }
@@ -150,6 +155,10 @@
   border-radius: 1vw;
 }
 
+.answer:hover{
+  cursor: pointer;
+}
+
 label {
   margin-left: 20px !important;
   font-weight: 600;
@@ -200,6 +209,7 @@ label {
   align-items: center;
 }
 
+
 #prevArrow:hover {
   cursor: pointer;
 }
@@ -213,7 +223,7 @@ label {
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 700;
   background-color: #355199;
   border-radius: 1vw;
@@ -222,6 +232,25 @@ label {
   display: none;
 }
 
+#home {
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 700;
+  background-color: #355199;
+  border-radius: 1vw;
+  width: 103px;
+  height: 7.5vh;
+  cursor: pointer;
+  display: flex;
+}
+
 #submitButton:hover {
+  cursor: pointer;
+}
+
+#home.hover{
   cursor: pointer;
 }

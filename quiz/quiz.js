@@ -2,6 +2,7 @@ let atQuestion = 1;
 document.querySelector("#questionButton1").style.color = "#355199";
 document.querySelector("#questionButton1").style.backgroundColor = "#ffffff";
 document.querySelector("#nextArrow").style.backgroundColor = "#777777";
+
 function removeQuestionButtonHighlight() {
   document.querySelector("#questionButton1").style.color = "#ffffff";
   document.querySelector("#questionButton1").style.backgroundColor =
@@ -63,7 +64,7 @@ window.addEventListener("load", function () {
   }
   this.scrollTo(0, 0);
   loadQuiz();
-  let timer = 300; // 5 minutes in seconds
+  let timer = 2225; // 5 minutes in seconds
   const timerElement = document.getElementById("time");
   const countdown = setInterval(() => {
     let minutes = Math.floor(timer / 60);
@@ -81,8 +82,6 @@ window.addEventListener("load", function () {
 
     // Stop the timer when it reaches zero
     if (timer <= 0) {
-      clearInterval(countdown);
-      timerElement.textContent = "00:00"; //end quiz here
       sessionStorage.setItem("userAnswers", JSON.stringify(userAnswersArray));
       sessionStorage.setItem(
         "correctAnswers",
@@ -97,6 +96,7 @@ window.addEventListener("load", function () {
 });
 
 window.addEventListener(
+  // preventing arrow scrolling
   "keydown",
   function (e) {
     if (
@@ -111,6 +111,7 @@ window.addEventListener(
 );
 
 document.addEventListener(
+  // preventing touch scrolling
   "touchmove",
   function (e) {
     e.preventDefault();
@@ -364,12 +365,14 @@ function enable(questionNumber) {
 
 function enableNext() {
   document.querySelector("#nextArrow").style.backgroundColor = "#355199";
+  document.querySelector("#nextArrow").style.cursor = "pointer";
   // document.querySelector("#nextArrow").style.display = "flex";
   console.log("enabled");
 }
 
 function disableNext() {
   document.querySelector("#nextArrow").style.backgroundColor = "#777777";
+  document.querySelector("#nextArrow").style.cursor = "default";
   // document.querySelector("#nextArrow").style.display = "none";
   console.log("disabled");
 }
@@ -380,4 +383,8 @@ function finishedQuiz() {
   sessionStorage.setItem("correctAnswers", JSON.stringify(correctAnswersArray));
   sessionStorage.setItem("questionsText", JSON.stringify(questionsArray));
   window.location = "/answers%20page/Answers.html";
+}
+
+function backToHome() {
+  window.location.href = "../newHome/homepage.html";
 }
